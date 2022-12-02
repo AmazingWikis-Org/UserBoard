@@ -3,18 +3,6 @@
 use MediaWiki\MediaWikiServices;
 
 class UserProfileHooks {
-
-	/**
-	 * Registers the following custom tags with the Parser:
-	 * - <randomuserswithavatars>
-	 * - <newusers>
-	 *
-	 * @param Parser $parser
-	 */
-	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'newusers', [ 'NewUsersList', 'getNewUsers' ] );
-	}
-
 	/**
 	 * Add a class to the <body> element on user pages to indicate which type
 	 * of user page -- social profile or traditional wiki user page -- has been

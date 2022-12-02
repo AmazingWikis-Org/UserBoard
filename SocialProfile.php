@@ -46,34 +46,11 @@ if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
 
 // Classes to be autoloaded
 // @phan-suppress-next-line PhanTypeArraySuspicious
-$wgAutoloadClasses['SpecialEditProfile'] = __DIR__ . '/UserProfile/includes/specials/SpecialEditProfile.php';
-$wgAutoloadClasses['SpecialPopulateUserProfiles'] = __DIR__ . '/UserProfile/includes/specials/SpecialPopulateExistingUsersProfiles.php';
-$wgAutoloadClasses['SpecialToggleUserPage'] = __DIR__ . '/UserProfile/includes/specials/SpecialToggleUserPageType.php';
-$wgAutoloadClasses['SpecialUpdateProfile'] = __DIR__ . '/UserProfile/includes/specials/SpecialUpdateProfile.php';
 $wgAutoloadClasses['UserProfile'] = __DIR__ . '/UserProfile/includes/UserProfile.php';
 $wgAutoloadClasses['UserProfileHooks'] = __DIR__ . '/UserProfile/includes/UserProfileHooks.php';
 $wgAutoloadClasses['UserProfilePage'] = __DIR__ . '/UserProfile/includes/UserProfilePage.php';
 $wgAutoloadClasses['SPUserSecurity'] = __DIR__ . '/UserProfile/includes/SPUserSecurity.php';
-$wgAutoloadClasses['NewUsersList'] = __DIR__ . '/UserProfile/includes/parser/NewUsersList.php';
 
-$wgAutoloadClasses['MigrateOldUserProfileUserColumnToActor'] = __DIR__ . '/UserProfile/maintenance/migrateOldUserProfileUserColumnToActor.php';
-$wgAutoloadClasses['MigrateOldUserFieldPrivacyUserColumnToActor'] = __DIR__ . '/UserProfile/maintenance/migrateOldUserFieldPrivacyUserColumnToActor.php';
-
-// API modules
-$wgAutoloadClasses['ApiUserProfilePrivacy'] = __DIR__ . '/UserProfile/includes/api/ApiUserProfilePrivacy.php';
-$wgAPIModules['smpuserprivacy'] = 'ApiUserProfilePrivacy';
-
-$wgAutoloadClasses['ApiUserProfileType'] = __DIR__ . '/UserProfile/includes/api/ApiUserProfileType.php';
-$wgAPIModules['smpuserprofiletype'] = 'ApiUserProfileType';
-
-$wgDefaultUserOptions['echo-subscriptions-web-social-rel'] = true;
-$wgDefaultUserOptions['echo-subscriptions-email-social-rel'] = false;
-
-// New special pages
-$wgSpecialPages['EditProfile'] = 'SpecialEditProfile';
-$wgSpecialPages['PopulateUserProfiles'] = 'SpecialPopulateUserProfiles';
-$wgSpecialPages['ToggleUserPage'] = 'SpecialToggleUserPage';
-$wgSpecialPages['UpdateProfile'] = 'SpecialUpdateProfile';
 
 // What to display on social profile pages by default?
 $wgUserProfileDisplay['board'] = true;
