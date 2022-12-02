@@ -46,10 +46,7 @@ if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
 
 // Classes to be autoloaded
 // @phan-suppress-next-line PhanTypeArraySuspicious
-$wgAutoloadClasses['UserProfile'] = __DIR__ . '/UserProfile/includes/UserProfile.php';
 $wgAutoloadClasses['UserProfileHooks'] = __DIR__ . '/UserProfile/includes/UserProfileHooks.php';
-$wgAutoloadClasses['UserProfilePage'] = __DIR__ . '/UserProfile/includes/UserProfilePage.php';
-$wgAutoloadClasses['SPUserSecurity'] = __DIR__ . '/UserProfile/includes/SPUserSecurity.php';
 
 
 // What to display on social profile pages by default?
@@ -109,18 +106,3 @@ $wgResourceModules['ext.socialprofile.LightBox'] = [
 
 // End ResourceLoader stuff
 
-if ( !defined( 'NS_USER_WIKI' ) ) {
-	define( 'NS_USER_WIKI', 200 );
-}
-
-if ( !defined( 'NS_USER_WIKI_TALK' ) ) {
-	define( 'NS_USER_WIKI_TALK', 201 );
-}
-
-if ( !defined( 'NS_USER_PROFILE' ) ) {
-	define( 'NS_USER_PROFILE', 202 );
-}
-
-if ( !defined( 'NS_USER_PROFILE_TALK' ) ) {
-	define( 'NS_USER_PROFILE_TALK', 203 );
-}
