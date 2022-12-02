@@ -1,0 +1,78 @@
+{
+	"name": "UserBoard",
+	"author": [
+		"Aaron Wright",
+		"David Pean",
+		"Jack Phoenix",
+		"Amazing Wikis Org"
+	],
+	"license-name": "GPL-2.0-or-later",
+	"descriptionmsg": "userboard-desc",
+	"type": "other",
+	"MessagesDirs": {
+		"UserBoard": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"MigrateOldUserBoardUserColumnsToActor": "maintenance/migrateOldUserBoardUserColumnsToActor.php",
+		"EchoUserBoardMessagePresentationModel": "includes/EchoUserBoardMessagePresentationModel.php",
+		"SpecialBoardBlast": "includes/specials/SpecialSendBoardBlast.php",
+		"SpecialViewUserBoard": "includes/specials/SpecialUserBoard.php",
+		"UserBoard": "includes/UserBoard.php",
+		"UserBoardHooks": "includes/UserBoardHooks.php",
+		"UserBoardMessageCount": "includes/UserBoardMessageCount.php",
+		"ApiDeleteUserBoardMessage": "includes/api/ApiDeleteUserBoardMessage.php",
+		"ApiSendUserBoardMessage": "includes/api/ApiSendUserBoardMessage.php"
+	},
+	"APIModules": {
+		"socialprofile-delete-message": "ApiDeleteUserBoardMessage",
+		"socialprofile-send-message": "ApiSendUserBoardMessage"
+	},
+	"Hooks": {
+		"BeforeCreateEchoEvent": "UserBoardHooks::onBeforeCreateEchoEvent",
+		"EchoGetDefaultNotifiedUsers": "UserBoardHooks::onEchoGetDefaultNotifiedUsers",
+		"EchoGetBundleRules": "UserBoardHooks::onEchoGetBundleRules"
+	},
+	"DefaultUserOptions": {
+		"echo-subscriptions-web-social-msg": true,
+		"echo-subscriptions-email-social-msg": false
+	},
+	"SpecialPages": {
+		"SendBoardBlast": "SpecialBoardBlast",
+		"UserBoard": "SpecialViewUserBoard"
+	},
+	"Hooks": {
+		"PersonalUrls": "UserBoardHooks::addURLToUserLinks"
+	},
+	"ResourceModules": {
+		"ext.socialprofile.userboard.js": {
+			"scripts": "js/UserBoard.js",
+			"dependencies": [
+				"mediawiki.api"
+			],
+			"messages": [
+				"userboard_confirmdelete"
+			]
+		},
+		"ext.socialprofile.userboard.css": {
+			"styles": "css/UserBoard.css"
+		},
+		"ext.socialprofile.userboard.boardblast.css": {
+			"styles": "css/BoardBlast.css"
+		},
+		"ext.socialprofile.userboard.boardblast.js": {
+			"scripts": "js/BoardBlast.js",
+			"messages": [
+				"boardblast-js-sending",
+				"boardblast-error-missing-message",
+				"boardblast-error-missing-user"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "SocialProfile/UserBoard/resources"
+	},
+	"manifest_version": 1
+}

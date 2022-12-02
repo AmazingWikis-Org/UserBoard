@@ -1,0 +1,109 @@
+#user-page-board {
+	margin: 5px 0 10px 0;
+}
+
+.user-board-top-links {
+	font-weight: 700;
+	margin: 15px 0 0 0;
+}
+
+.user-board-top-links a {
+	text-decoration: none;
+}
+
+.user-page-message-form {
+	font-weight: 700;
+	margin: 5px 0 15px 0;
+
+}
+
+.user-board-message {
+	border: 1px solid #d4dfd7;
+	width: 600px;
+	height: 100%;
+	margin: 0 0 15px 0;
+}
+
+.user-board-message-from {
+	background-color: #eef3f0;
+	padding: 3px 0 5px 5px;
+}
+
+.user-board-message-from a {
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.user-board-message-content {
+	padding: 5px;
+}
+
+.user-board-message-time {
+	color: #797979;
+	font-size: 11px;
+	margin: 2px 0 0 5px;
+}
+
+.user-board-message-image {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.user-board-message-image img {
+	border: 1px solid #dcdcdc;
+}
+
+.user-board-message-body {
+	float: left;
+	margin: 0 10px 0 0;
+	vertical-align: top;
+	width: 90%;
+}
+
+.user-board-message-body p {
+	margin: 0 1em 0 0 !important;
+}
+
+.user-board-message-links {
+	padding: 0 0 50px 15px;
+}
+
+.user-board-message-links a {
+	font-size: 11px;
+	text-decoration: none;
+	margin: 0 0 0 0;
+}
+
+.user-board-red a {
+	color: #f00;
+}
+
+select#message_type {
+	vertical-align: middle;
+	margin: -1px 0 0 5px;
+}
+
+.user-page-message-form textarea {
+	width: 80%;
+}
+
+.user-page-message-count {
+	color: #666;
+	font-size: 11px;
+}
+
+.user-board-message-type {
+	color: #797979;
+}
+
+/* Responsive stuff for mobile devices */
+@media screen and (max-width: 750px) {
+	div.user-board-message {
+		max-width: 100%;
+	}
+	/* Makes long messages wrap sanely */
+	div.user-board-message-body {
+		float: none;
+	}
+}

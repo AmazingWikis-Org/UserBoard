@@ -1,0 +1,6 @@
+[gerrit]
+host=gerrit.wikimedia.org
+port=29418
+project=mediawiki/extensions/SocialProfile
+track=1
+defaultrebase=0
