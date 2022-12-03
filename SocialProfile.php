@@ -11,6 +11,16 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	);
 }
 
+// Extension credits that show up on Special:Version
+$wgExtensionCredits['other'][] = [
+	'path' => __FILE__,
+	'name' => 'SocialProfile',
+	'author' => [ 'Aaron Wright', 'David Pean', 'Jack Phoenix', 'Amazing Wikis Org' ],
+	'version' => '1.20',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:SocialProfile',
+	'descriptionmsg' => 'socialprofile-desc',
+];
+
 /**
  * This is the loader file for the SocialProfile extension. You should include
  * this file in your wiki's LocalSettings.php to activate SocialProfile.
@@ -23,13 +33,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * For more info about SocialProfile, please see https://www.mediawiki.org/wiki/Extension:SocialProfile.
  */
 
-// Internationalization files
-$wgMessagesDirs['SocialProfile'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SocialProfileAlias'] = __DIR__ . '/SocialProfile.alias.php';
-
-$wgMessagesDirs['SocialProfileUserProfile'] = __DIR__ . '/UserProfile/i18n';
-
-$wgExtensionMessagesFiles['SocialProfileNamespaces'] = __DIR__ . '/SocialProfile.namespaces.php';
 
 // Hack to make installer load extension properly. (T243861)
 // Based on Installer::includeExtensions()
@@ -46,43 +49,36 @@ if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
 
 // Classes to be autoloaded
 // @phan-suppress-next-line PhanTypeArraySuspicious
-$wgAutoloadClasses['UserProfileHooks'] = __DIR__ . '/UserProfile/includes/UserProfileHooks.php';
+$wgAutoloadClasses['UserProfileHooks'] = __DIR__ . '/hooks/UserProfileHooks.php';
+$wgAutoloadClasses['SocialProfileHooks'] = __DIR__ . '/hooks/SocialProfileHooks.php';
+
+
+// Hook functions
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'SocialProfileHooks::onLoadExtensionSchemaUpdates';
+$wgHooks['ArticleFromTitle'][] = 'UserProfileHooks::onArticleFromTitle';
+$wgHooks['TitleIsAlwaysKnown'][] = 'UserProfileHooks::onTitleIsAlwaysKnown';
+$wgHooks['OutputPageBodyAttributes'][] = 'UserProfileHooks::onOutputPageBodyAttributes';
+$wgHooks['DifferenceEngineShowDiff'][] = 'UserProfileHooks::onDifferenceEngineShowDiff';
+$wgHooks['DifferenceEngineOldHeader'][] = 'UserProfileHooks::onDifferenceEngineOldHeader';
+$wgHooks['DifferenceEngineNewHeader'][] = 'UserProfileHooks::onDifferenceEngineNewHeader';
+
+
+// Loader files
+wfLoadExtensions( [
+	'SocialProfile/UserBoard'
+] );
 
 
 // What to display on social profile pages by default?
 $wgUserProfileDisplay['board'] = true;
 
+
 // Should we display UserBoard-related things on social profile pages?
 $wgUserBoard = true;
 
-// Extension credits that show up on Special:Version
-$wgExtensionCredits['other'][] = [
-	'path' => __FILE__,
-	'name' => 'SocialProfile',
-	'author' => [ 'Aaron Wright', 'David Pean', 'Jack Phoenix' ],
-	'version' => '1.20',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:SocialProfile',
-	'descriptionmsg' => 'socialprofile-desc',
-];
-
-// Hook functions
-$wgAutoloadClasses['SocialProfileHooks'] = __DIR__ . '/Hooks/SocialProfileHooks.php';
-
-// Loader files
-require_once __DIR__ . '/UserProfile/UserProfile.php'; // Profile page configuration loader file
-wfLoadExtensions( [
-	'SocialProfile/UserBoard'
-] );
-
-$wgHooks['BeforePageDisplay'][] = 'SocialProfileHooks::onBeforePageDisplay';
-$wgHooks['CanonicalNamespaces'][] = 'SocialProfileHooks::onCanonicalNamespaces';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'SocialProfileHooks::onLoadExtensionSchemaUpdates';
 
 // ResourceLoader module definitions for certain components which do not have
 // their own loader file
-
-// General
-
 $wgResourceModules['ext.socialprofile.clearfix'] = [
 	'styles' => 'clearfix.css',
 	'localBasePath' => __DIR__ . '/shared',
