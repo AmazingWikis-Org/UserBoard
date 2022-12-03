@@ -49,18 +49,16 @@ if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
 
 // Classes to be autoloaded
 // @phan-suppress-next-line PhanTypeArraySuspicious
-$wgAutoloadClasses['UserProfileHooks'] = __DIR__ . '/hooks/UserProfileHooks.php';
-$wgAutoloadClasses['SocialProfileHooks'] = __DIR__ . '/hooks/SocialProfileHooks.php';
-
+$wgAutoloadClasses['UserBoardHooks'] = __DIR__ . '/hooks/UserBoardHooks.php';
 
 // Hook functions
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'SocialProfileHooks::onLoadExtensionSchemaUpdates';
-$wgHooks['ArticleFromTitle'][] = 'UserProfileHooks::onArticleFromTitle';
-$wgHooks['TitleIsAlwaysKnown'][] = 'UserProfileHooks::onTitleIsAlwaysKnown';
-$wgHooks['OutputPageBodyAttributes'][] = 'UserProfileHooks::onOutputPageBodyAttributes';
-$wgHooks['DifferenceEngineShowDiff'][] = 'UserProfileHooks::onDifferenceEngineShowDiff';
-$wgHooks['DifferenceEngineOldHeader'][] = 'UserProfileHooks::onDifferenceEngineOldHeader';
-$wgHooks['DifferenceEngineNewHeader'][] = 'UserProfileHooks::onDifferenceEngineNewHeader';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'UserBoardHooks::onLoadExtensionSchemaUpdates';
+$wgHooks['ArticleFromTitle'][] = 'UserBoardHooks::onArticleFromTitle';
+$wgHooks['TitleIsAlwaysKnown'][] = 'UserBoardHooks::onTitleIsAlwaysKnown';
+$wgHooks['OutputPageBodyAttributes'][] = 'UserBoardHooks::onOutputPageBodyAttributes';
+$wgHooks['DifferenceEngineShowDiff'][] = 'UserBoardHooks::onDifferenceEngineShowDiff';
+$wgHooks['DifferenceEngineOldHeader'][] = 'UserBoardHooks::onDifferenceEngineOldHeader';
+$wgHooks['DifferenceEngineNewHeader'][] = 'UserBoardHooks::onDifferenceEngineNewHeader';
 
 
 // Loader files
