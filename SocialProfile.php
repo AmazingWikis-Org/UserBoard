@@ -21,19 +21,6 @@ $wgExtensionCredits['other'][] = [
 	'descriptionmsg' => 'socialprofile-desc',
 ];
 
-/**
- * This is the loader file for the SocialProfile extension. You should include
- * this file in your wiki's LocalSettings.php to activate SocialProfile.
- *
- * If you want to use the UserWelcome extension (bundled with SocialProfile),
- * the <topusers /> tag or the user levels feature, there are some other files
- * you will need to include in LocalSettings.php. The online manual has more
- * details about this.
- *
- * For more info about SocialProfile, please see https://www.mediawiki.org/wiki/Extension:SocialProfile.
- */
-
-
 // Hack to make installer load extension properly. (T243861)
 // Based on Installer::includeExtensions()
 if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
@@ -66,27 +53,18 @@ wfLoadExtensions( [
 	'SocialProfile/UserBoard'
 ] );
 
-
-// What to display on social profile pages by default?
-$wgUserProfileDisplay['board'] = true;
-
-
-// Should we display UserBoard-related things on social profile pages?
-$wgUserBoard = true;
-
-
 // ResourceLoader module definitions for certain components which do not have
 // their own loader file
 $wgResourceModules['ext.socialprofile.clearfix'] = [
 	'styles' => 'clearfix.css',
-	'localBasePath' => __DIR__ . '/shared',
-	'remoteExtPath' => 'SocialProfile/shared',
+	'localBasePath' => __DIR__ . '/UserBoard/resources/css',
+	'remoteExtPath' => 'UserBoard/resources/css',
 ];
 
 $wgResourceModules['ext.socialprofile.responsive'] = [
 	'styles' => 'responsive.less',
-	'localBasePath' => __DIR__ . '/shared',
-	'remoteExtPath' => 'SocialProfile/shared',
+	'localBasePath' => __DIR__ . '/UserBoard/resources/css',
+	'remoteExtPath' => 'UserBoard/resources/css',
 ];
 
 // General/shared JS modules -- not (necessarily) directly used by SocialProfile,
@@ -94,8 +72,8 @@ $wgResourceModules['ext.socialprofile.responsive'] = [
 // @see https://phabricator.wikimedia.org/T100025
 $wgResourceModules['ext.socialprofile.LightBox'] = [
 	'scripts' => 'LightBox.js',
-	'localBasePath' => __DIR__ . '/shared',
-	'remoteExtPath' => 'SocialProfile/shared',
+	'localBasePath' => __DIR__ . '/UserBoard/resources/js',
+	'remoteExtPath' => 'UserBoard/resources/js',
 ];
 
 // End ResourceLoader stuff
