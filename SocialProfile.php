@@ -50,18 +50,18 @@ $wgHooks['DifferenceEngineNewHeader'][] = 'UserBoardHooks::onDifferenceEngineNew
 
 // Loader files
 wfLoadExtensions( [
-	'SocialProfile/UserBoard'
+	'UserBoard/src'
 ] );
 
 // ResourceLoader module definitions for certain components which do not have
 // their own loader file
-$wgResourceModules['ext.socialprofile.clearfix'] = [
+$wgResourceModules['ext.UserBoard.clearfix'] = [
 	'styles' => 'clearfix.css',
 	'localBasePath' => __DIR__ . '/UserBoard/resources/css',
 	'remoteExtPath' => 'UserBoard/resources/css',
 ];
 
-$wgResourceModules['ext.socialprofile.responsive'] = [
+$wgResourceModules['ext.UserBoard.responsive'] = [
 	'styles' => 'responsive.less',
 	'localBasePath' => __DIR__ . '/UserBoard/resources/css',
 	'remoteExtPath' => 'UserBoard/resources/css',
@@ -70,7 +70,7 @@ $wgResourceModules['ext.socialprofile.responsive'] = [
 // General/shared JS modules -- not (necessarily) directly used by SocialProfile,
 // but rather by other social tools which depend on SP
 // @see https://phabricator.wikimedia.org/T100025
-$wgResourceModules['ext.socialprofile.LightBox'] = [
+$wgResourceModules['ext.UserBoard.LightBox'] = [
 	'scripts' => 'LightBox.js',
 	'localBasePath' => __DIR__ . '/UserBoard/resources/js',
 	'remoteExtPath' => 'UserBoard/resources/js',
