@@ -17,9 +17,6 @@ module.exports = function ( grunt ) {
 		banana: {
 			all: [
 				'i18n/',
-				'UserBoard/i18n/',
-				'UserProfile/i18n/',
-				'UserActivity/i18n/'
 			]
 		}
 	} );
