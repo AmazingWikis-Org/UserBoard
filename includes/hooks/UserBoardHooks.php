@@ -24,7 +24,7 @@ class UserBoardHooks {
 		$dir = __DIR__;
 		$dbExt = '';
 		$db = $updater->getDB();
-		$updater->addExtensionTable( 'user_board', "$dir/UserBoard/sql/user_board$dbExt.sql" );
+		$updater->addExtensionTable( 'user_board', "$dir/UserBoard//includes/sql/user_board$dbExt.sql" );
 	}
 
 	/**
@@ -91,10 +91,6 @@ class UserBoardHooks {
 			EchoAttributeManager::ATTR_LOCATORS => [
 				'EchoUserLocator::locateEventAgent'
 			],
-
-			'icon' => 'emailuser', // per discussion with Cody on 27 March 2016
-
-			'bundle' => [ 'web' => true, 'email' => true ]
 		];
 	}
 

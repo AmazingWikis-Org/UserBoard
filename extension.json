@@ -82,7 +82,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
-		"remoteExtPath": "SocialProfile/UserBoard/resources"
+		"remoteExtPath": "UserBoard/includes/resources"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
