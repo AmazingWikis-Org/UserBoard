@@ -10,7 +10,7 @@
 		]
 	},
 	"userboard": "UserBoard",
-	"userboard-desc": "{{desc|name=UserBoard|url=https://www.mediawiki.org/wiki/Extension:SocialProfile}}",
+	"userboard-desc": "UserBoardHooks.php",
 	"messagesenttitle": "Page title of Special:SendBoardBlast special page when a board blast has successfully been sent out; a board blast is a private user board message sent to a larger group of recipients at one and these recipients must be friends or foes of the sender. See also {{msg-mw|messagesentsuccess}}",
 	"boardblasttitle": "Page title of Special:SendBoardBlast; a board blast is a private user board message sent to a larger group of recipients at one and these recipients must be friends or foes of the sender",
 	"boardblaststep1": "Help message displayed on Special:SendBoardBlast",
