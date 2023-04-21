@@ -33,14 +33,14 @@
 		"BeforeCreateEchoEvent": "UserBoardHooks::onBeforeCreateEchoEvent",
 		"EchoGetDefaultNotifiedUsers": "UserBoardHooks::onEchoGetDefaultNotifiedUsers",
 		"EchoGetBundleRules": "UserBoardHooks::onEchoGetBundleRules",
-		"PersonalUrls": "UserBoardHooks::addURLToUserLinks"
-		"LoadExtensionSchemaUpdates": "UserBoardHooks::onLoadExtensionSchemaUpdates";
-		"ArticleFromTitle" : "UserBoardHooks::onArticleFromTitle";
-		"TitleIsAlwaysKnown" : "UserBoardHooks::onTitleIsAlwaysKnown";
-		"OutputPageBodyAttributes" : "UserBoardHooks::onOutputPageBodyAttributes";
-		"DifferenceEngineShowDiff" : "UserBoardHooks::onDifferenceEngineShowDiff";
-		"DifferenceEngineOldHeader" : "UserBoardHooks::onDifferenceEngineOldHeader";
-		"DifferenceEngineNewHeader" : "UserBoardHooks::onDifferenceEngineNewHeader";
+		"PersonalUrls": "UserBoardHooks::addURLToUserLinks",
+		"LoadExtensionSchemaUpdates": "UserBoardHooks::onLoadExtensionSchemaUpdates",
+		"ArticleFromTitle" : "UserBoardHooks::onArticleFromTitle",
+		"TitleIsAlwaysKnown" : "UserBoardHooks::onTitleIsAlwaysKnown",
+		"OutputPageBodyAttributes" : "UserBoardHooks::onOutputPageBodyAttributes",
+		"DifferenceEngineShowDiff" : "UserBoardHooks::onDifferenceEngineShowDiff",
+		"DifferenceEngineOldHeader" : "UserBoardHooks::onDifferenceEngineOldHeader",
+		"DifferenceEngineNewHeader" : "UserBoardHooks::onDifferenceEngineNewHeader"
 	},
 	"SpecialPages": {
 		"SendBoardBlast": "SpecialBoardBlast",
@@ -55,10 +55,10 @@
 		},
 		"ext.UserBoard.clearfix" : {
 			"styles": "css/clearfix.css"
-		}
+		},
 		"ext.UserBoard.responsive" : {
 			"styles": "css/responsive.less"
-		}
+		},
 		"ext.UserBoard.LightBox": {
 			"styles": "js/LightBox.js"
 		},
