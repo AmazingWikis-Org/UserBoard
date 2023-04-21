@@ -1,5 +1,5 @@
 {
-	"name": "SocialProfile",
+	"name": "UserBoard",
 	"private": true,
 	"scripts": {
 		"test": "grunt test"
