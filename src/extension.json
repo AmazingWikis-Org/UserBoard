@@ -20,7 +20,7 @@
 		"SpecialBoardBlast": "includes/specials/SpecialSendBoardBlast.php",
 		"SpecialViewUserBoard": "includes/specials/SpecialUserBoard.php",
 		"UserBoard": "includes/UserBoard.php",
-		"UserBoardHooks": "includes/UserBoardHooks.php",
+		"UserBoardHooks": "includes/hooks/UserBoardHooks.php",
 		"UserBoardMessageCount": "includes/UserBoardMessageCount.php",
 		"ApiDeleteUserBoardMessage": "includes/api/ApiDeleteUserBoardMessage.php",
 		"ApiSendUserBoardMessage": "includes/api/ApiSendUserBoardMessage.php"
@@ -32,20 +32,36 @@
 	"Hooks": {
 		"BeforeCreateEchoEvent": "UserBoardHooks::onBeforeCreateEchoEvent",
 		"EchoGetDefaultNotifiedUsers": "UserBoardHooks::onEchoGetDefaultNotifiedUsers",
-		"EchoGetBundleRules": "UserBoardHooks::onEchoGetBundleRules"
-	},
-	"DefaultUserOptions": {
-		"echo-subscriptions-web-social-msg": true,
-		"echo-subscriptions-email-social-msg": false
+		"EchoGetBundleRules": "UserBoardHooks::onEchoGetBundleRules",
+		"PersonalUrls": "UserBoardHooks::addURLToUserLinks"
+		"LoadExtensionSchemaUpdates": "UserBoardHooks::onLoadExtensionSchemaUpdates";
+		"ArticleFromTitle" : "UserBoardHooks::onArticleFromTitle";
+		"TitleIsAlwaysKnown" : "UserBoardHooks::onTitleIsAlwaysKnown";
+		"OutputPageBodyAttributes" : "UserBoardHooks::onOutputPageBodyAttributes";
+		"DifferenceEngineShowDiff" : "UserBoardHooks::onDifferenceEngineShowDiff";
+		"DifferenceEngineOldHeader" : "UserBoardHooks::onDifferenceEngineOldHeader";
+		"DifferenceEngineNewHeader" : "UserBoardHooks::onDifferenceEngineNewHeader";
 	},
 	"SpecialPages": {
 		"SendBoardBlast": "SpecialBoardBlast",
 		"UserBoard": "SpecialViewUserBoard"
 	},
-	"Hooks": {
-		"PersonalUrls": "UserBoardHooks::addURLToUserLinks"
-	},
 	"ResourceModules": {
+		"ext.socialprofile.userboard.css": {
+			"styles": "css/UserBoard.css"
+		},
+		"ext.socialprofile.userboard.boardblast.css": {
+			"styles": "css/BoardBlast.css"
+		},
+		"ext.UserBoard.clearfix" : {
+			"styles": "css/clearfix.css"
+		}
+		"ext.UserBoard.responsive" : {
+			"styles": "css/responsive.less"
+		}
+		"ext.UserBoard.LightBox": {
+			"styles": "js/LightBox.js"
+		},
 		"ext.socialprofile.userboard.js": {
 			"scripts": "js/UserBoard.js",
 			"dependencies": [
@@ -54,12 +70,6 @@
 			"messages": [
 				"userboard_confirmdelete"
 			]
-		},
-		"ext.socialprofile.userboard.css": {
-			"styles": "css/UserBoard.css"
-		},
-		"ext.socialprofile.userboard.boardblast.css": {
-			"styles": "css/BoardBlast.css"
 		},
 		"ext.socialprofile.userboard.boardblast.js": {
 			"scripts": "js/BoardBlast.js",
