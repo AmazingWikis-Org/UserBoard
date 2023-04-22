@@ -12,7 +12,7 @@ var UserBoard = {
 			UserBoard.posted = 1;
 			var messageType = document.getElementById( 'message_type' ).value;
 			( new mw.Api() ).postWithToken( 'csrf', {
-				action: 'socialprofile-send-message',
+				action: 'userboard-send-message',
 				format: 'json',
 				username: recipient,
 				message: message,
@@ -37,7 +37,7 @@ var UserBoard = {
 	deleteMessage: function ( id ) {
 		if ( window.confirm( mw.msg( 'userboard_confirmdelete' ) ) ) {
 			( new mw.Api() ).postWithToken( 'csrf', {
-				action: 'socialprofile-delete-message',
+				action: 'userboard-delete-message',
 				format: 'json',
 				id: id
 			} ).done( function () {
