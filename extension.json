@@ -26,8 +26,8 @@
 		"ApiSendUserBoardMessage": "includes/api/ApiSendUserBoardMessage.php"
 	},
 	"APIModules": {
-		"socialprofile-delete-message": "ApiDeleteUserBoardMessage",
-		"socialprofile-send-message": "ApiSendUserBoardMessage"
+		"Userboard-delete-message": "ApiDeleteUserBoardMessage",
+		"Userboard-send-message": "ApiSendUserBoardMessage"
 	},
 	"Hooks": {
 		"BeforeCreateEchoEvent": "UserBoardHooks::onBeforeCreateEchoEvent",
