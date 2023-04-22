@@ -11,7 +11,7 @@ class UserBoardHooks {
 	 * @param Skin $skin
 	 */
 	public static function onBeforePageDisplay( OutputPage $out, $skin ) {
-		$out->addModuleStyles( 'ext.socialprofile.responsive' );
+		$out->addModuleStyles( 'userboard.responsive' );
 	}
 
 	/**
