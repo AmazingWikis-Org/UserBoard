@@ -4,6 +4,7 @@
  * a list of their friends and foes
  *
  * @author David Pean <david.pean@gmail.com>
+ * @license GPL-2.0-or-later
  */
 
 class SpecialBoardBlast extends UnlistedSpecialPage {
