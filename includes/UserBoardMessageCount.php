@@ -59,7 +59,7 @@ class UserBoardMessageCount {
 		$data = $this->cache->get( $this->makeKey() );
 
 		if ( $data != '' ) {
-			$logger = LoggerFactory::getInstance( 'SocialProfile' );
+			$logger = LoggerFactory::getInstance( 'UserBoard' );
 			$logger->debug( "Got new message count of {data} for user name {user_name} from cache\n", [
 				'data' => $data,
 				'user_name' => $this->user->getName()
@@ -82,7 +82,7 @@ class UserBoardMessageCount {
 	 * @return int Amount of new messages
 	 */
 	private function getFromDatabase() {
-		$logger = LoggerFactory::getInstance( 'SocialProfile' );
+		$logger = LoggerFactory::getInstance( 'UserBoard' );
 		$logger->debug( "Got new message count for user name {user_name} from DB\n", [
 			'user_name' => $this->user->getName()
 		] );
