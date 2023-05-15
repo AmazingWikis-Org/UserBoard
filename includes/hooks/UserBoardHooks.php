@@ -24,7 +24,7 @@ class UserBoardHooks {
 		$dir = __DIR__;
 		$dbExt = '';
 		$db = $updater->getDB();
-		$updater->addExtensionTable( 'user_board', "$dir/UserBoard//includes/sql/user_board$dbExt.sql" );
+		$updater->addExtensionTable( 'user_board', "$dir/UserBoard/includes/sql/user_board$dbExt.sql" );
 	}
 
 	/**
