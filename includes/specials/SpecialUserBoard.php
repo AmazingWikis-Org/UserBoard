@@ -5,10 +5,7 @@ use MediaWiki\MediaWikiServices;
 /**
  * Display User Board messages for a user
  *
- * @file
- * @ingroup Extensions
  * @author David Pean <david.pean@gmail.com>
- * @copyright Copyright © 2007, Wikia Inc.
  * @license GPL-2.0-or-later
  */
 
