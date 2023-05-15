@@ -3,11 +3,7 @@
  * A special page to allow users to send a mass board message by selecting from
  * a list of their friends and foes
  *
- * @file
- * @ingroup Extensions
  * @author David Pean <david.pean@gmail.com>
- * @copyright Copyright © 2007, Wikia Inc.
- * @license GPL-2.0-or-later
  */
 
 class SpecialBoardBlast extends UnlistedSpecialPage {
