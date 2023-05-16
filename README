@@ -1,22 +1,21 @@
-This is the readme file for User Board extension and is compatible with MediaWiki 1.37.
+This is the readme file for User Board extension and is compatible with MediaWiki 1.39.
 
 ==Intro==
-User Board extension provides for user-to-user thread style messages into your MediaWiki. 
+User Board extension provides for user-to-user modern thread style messages into your MediaWiki. 
 
 ==Usage==
-Currently in order to send a message, must use this link: index.php?title=Special:UserBoard&user=USERNAME
+Currently in order to send a message, append the following to url: `index.php?title=Special:UserBoard&user=USERNAME`
+USERNAME is the user you wish to message.
 
 ==Authors==
 User Board was extracted from SocialProfile in December 2022 by Amazing Wikis Org 
-
-SocialProfile was written by David Pean and Aaron Wright for Wikia, Inc. It has been maintained by Jack Phoenix since 2008.
 
 ==License==
 User Board is licensed under GNU General Public License 2.0 or later.
 See http://www.gnu.org/copyleft/gpl.html for more details.
 
 ==Bugs==
-Bugs and issues should be reported at https://github.com/AmazingWikis/User-Boards
+Bugs and issues should be reported at https://github.com/AmazingWikis/UserBoard
 
 
 USE AT YOUR OWN RISK!
