@@ -13,11 +13,6 @@ class UserBoard {
 	const MESSAGE_PUBLIC = 0;
 
 	/**
-	 * @var int Private message readable only by the intended user
-	 */
-	const MESSAGE_PRIVATE = 1;
-
-	/**
 	 * @var User the current context user
 	 */
 	private $currentUser;
