@@ -35,8 +35,6 @@
 		"EchoGetBundleRules": "UserBoardHooks::onEchoGetBundleRules",
 		"PersonalUrls": "UserBoardHooks::addURLToUserLinks",
 		"LoadExtensionSchemaUpdates": "UserBoardHooks::onLoadExtensionSchemaUpdates",
-		"ArticleFromTitle" : "UserBoardHooks::onArticleFromTitle",
-		"TitleIsAlwaysKnown" : "UserBoardHooks::onTitleIsAlwaysKnown",
 		"OutputPageBodyAttributes" : "UserBoardHooks::onOutputPageBodyAttributes",
 		"DifferenceEngineShowDiff" : "UserBoardHooks::onDifferenceEngineShowDiff",
 		"DifferenceEngineOldHeader" : "UserBoardHooks::onDifferenceEngineOldHeader",
