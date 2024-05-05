@@ -12,7 +12,7 @@ class ApiDeleteUserBoardMessage extends ApiBase {
 
 		// Don't allow deleting messages when the database is locked for some reason
 		if ( $readOnlyMode->isReadOnly() ) {
-			$this->getResult()->addValue( null, 'result', 'You cannot delete messages right now.' );
+			$this->getResult()->addValue( null, 'result', $this->msg('userboard-cannotdelete'));
 			return true;
 		}
 

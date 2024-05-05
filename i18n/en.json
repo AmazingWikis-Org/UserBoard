@@ -21,6 +21,8 @@
 	"boardblast-error-missing-message": "Please enter a message",
 	"boardblast-error-missing-user": "Please select at least one person",
 	"userboard": "User board",
+	"userboard-cannotdelete": "You cannot delete messages right now",
+	"userboard-cannotsend": "You cannot send messages",
 	"userboard_board-to-board": "Board-to-board",
 	"userboard_noexist": "The user you are trying to view does not exist.",
 	"userboard_yourboard": "Your board",
