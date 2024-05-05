@@ -21,12 +21,10 @@ class UserBoardHooks {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$dir = __DIR__;
-		$dbExt = '';
-		$db = $updater->getDB();
-		$updater->addExtensionTable( 'user_board', "$dir/UserBoard/includes/sql/user_board$dbExt.sql" );
-	}
-
+        $dir = __DIR__;
+        $db = $updater->getDB();
+        $updater->addExtensionTable( 'user_board', "$dir/../sql/user_board.sql" );
+    }
 	/**
 	 * Add a link to the user's userboard page among "personal URLs" at the top
 	 *
