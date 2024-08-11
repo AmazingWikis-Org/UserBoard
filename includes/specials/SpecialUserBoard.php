@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
+use MediaWiki\User\UserIdentityLookup;
 
 /**
  * Display User Board messages for a user
@@ -11,7 +13,12 @@ use MediaWiki\MediaWikiServices;
 
 class SpecialViewUserBoard extends SpecialPage {
 
-	public function __construct() {
+	/**
+	 * @param UserIdentityLookup $userIdentityLookup
+	 */
+	public function __construct(
+		private UserIdentityLookup $userIdentityLookup
+	) {
 		parent::__construct( 'UserBoard' );
 	}
 
@@ -77,7 +84,8 @@ class SpecialViewUserBoard extends SpecialPage {
 		if ( !$user_name ) {
 			$user_name = $currentUser->getName();
 		}
-		$user_id = User::idFromName( $user_name );
+		
+		$user_id = $this->userIdentityLookup->getUserIdentityByName( $user_name )->getId();
 		$user = Title::makeTitle( NS_USER, $user_name );
 
 		if ( $user_name_2 ) {

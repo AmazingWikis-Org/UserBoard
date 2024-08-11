@@ -43,7 +43,10 @@
 	},
 	"SpecialPages": {
 		"SendBoardBlast": "SpecialBoardBlast",
-		"UserBoard": "SpecialViewUserBoard"
+		"UserBoard": {
+			"class": "SpecialViewUserBoard",
+			"services": ["UserIdentityLookup"]
+		}
 	},
 	"ResourceModules": {
 		"ext.socialprofile.userboard.css": {
