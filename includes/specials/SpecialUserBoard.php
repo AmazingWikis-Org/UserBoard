@@ -78,13 +78,16 @@ class SpecialViewUserBoard extends SpecialPage {
 			return;
 		}
 
+		$wasUsernameSpecified = true;
+		
 		/**
 		 * If no user is set in the URL, we assume it's the current user
 		 */
 		if ( !$user_name ) {
 			$user_name = $currentUser->getName();
+			$wasUsernameSpecified = false;
 		}
-		
+
 		$user_id = $this->userIdentityLookup->getUserIdentityByName( $user_name )->getId();
 		$user = Title::makeTitle( NS_USER, $user_name );
 
@@ -184,8 +187,14 @@ class SpecialViewUserBoard extends SpecialPage {
 		}
 
 		$output .= '<div class="user-board-top-links">';
-		$output .= '<a href="' . htmlspecialchars( $user->getFullURL() ) . '">&lt; ' .
-			$this->msg( 'userboard_backprofile', $user_name )->parse() . '</a>';
+		$output .= '<a href="' . htmlspecialchars( $user->getFullURL() ) . '">&lt; ';
+
+		if($wasUsernameSpecified) {
+			$output .= $this->msg( 'userboard_backprofile', $user_name )->parse() . '</a>';
+		} else {
+			$output .= $this->msg( 'userboard_backyourprofile' )->parse() . '</a>';
+		}
+
 		$output .= '</div>';
 
 		$board_to_board = ''; // Prevent E_NOTICE
@@ -195,6 +204,7 @@ class SpecialViewUserBoard extends SpecialPage {
 		} else {
 			$start = ( $page - 1 ) * $per_page + 1;
 		}
+		
 		$end = $start + ( count( $ub_messages ) ) - 1;
 
 		if ( $currentUser->getId() != 0 && $currentUser->getName() != $user_name ) {
