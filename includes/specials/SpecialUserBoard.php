@@ -302,11 +302,8 @@ class SpecialViewUserBoard extends SpecialPage {
 		}
 
 		if ( $currentUser->isBlocked() ) {
-			// only let them post to admins
-			// $user_to = User::newFromId( $user_id );
-			// if( !$user_to->isAllowed( 'delete' ) ) {
-				$can_post = false;
-			// }
+			// FIXME: allow them to post on their own board unless "edit own talk page" is disabled
+			$can_post = false;
 		}
 
 		if ( $can_post ) {
