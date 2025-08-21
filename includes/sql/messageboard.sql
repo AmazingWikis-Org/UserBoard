@@ -10,10 +10,13 @@ CREATE TABLE IF NOT EXISTS /*_*/mb_thread (
 `mb_thread_id` int(11) PRIMARY KEY auto_increment,
 `mb_thread_title` TEXT NOT NULL,
 `mb_thread_date` datetime default NULL,
-`actor_id` bigint unsigned NOT NULL, -- foreign key to actor table
 `mb_board_id` int(11) NOT NULL, -- foreign key to message_board.mb_board_id
 `mb_message_id` bigint unsigned NOT NULL, -- foreign key to mb_message.mb_message_id
 `mb_thread_privacy` int(11) NOT NULL -- foreign key to message_board.mb_board_type
+`actor_id` bigint unsigned NOT NULL, -- foreign key to actor table
+FOREIGN KEY (actor_id) REFERENCES actor(actor_id),
+FOREIGN KEY (mb_board_id) REFERENCES message_board(mb_board_id),
+FOREIGN KEY (mb_message_id) REFERENCES mb_message(mb_message_id)
 ) /*$wgDBTableOptions*/;
 
 CREATE TABLE IF NOT EXISTS /*_*/mb_message (
@@ -32,8 +35,8 @@ CREATE TABLE IF NOT EXISTS /*_*/mb_archive (
 `mb_thread_id` int(11) PRIMARY KEY auto_increment,
 `mb_thread_title` TEXT NOT NULL,
 `mb_thread_date` datetime default NULL,
-`actor_id` bigint unsigned NOT NULL, -- foreign key to actor table
 `mb_message_id` int(11) PRIMARY KEY auto_increment,
 `mb_message_content` TEXT NOT NULL,
-`mb_message_date` datetime default NULL
+`mb_message_date` datetime default NULL,
+ `actor_id` bigint unsigned NOT NULL -- foreign key to actor table
 ) /*$wgDBTableOptions*/;
